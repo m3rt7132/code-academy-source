@@ -1,0 +1,21 @@
+<title>Code Academy - {{kod.isim}}</title>
+<main>
+  
+  <h1 class="text-center text-light font-weight-bolder" style="margin: 1rem;">{{kod.isim}}</h1>
+  <h5 class="text-center text-light font-weight-light">{{kod.desc}}</h5>
+  <hr>
+  
+  <p class="h5">Main Dosya</p>
+  <pre class="prettyprint">
+    <code>{{kod.main_code}}</code>
+  </pre>
+  <code id="code_main" hidden>{{kod.main_code}}</code>
+  <!-- <button type="button" class="btn btn-outline-success btn-lg btn-block" style="margin: 1rem;" id="copy_main">Kodu Kopyala</button> -->
+  <p class="h5">Komutlar Klasörü</p>
+  <pre class="prettyprint">
+    <code>{{kod.komutlar_code}}</code>
+  </pre>
+<code id="code_komutlar" hidden>{{kod.komutlar_code}}</code>
+<!-- <button type="button" class="btn btn-outline-success btn-lg btn-block" style="margin: 1rem;" id="copy_komutlar">Kodu Kopyala</button> -->
+<a href="/sil/{{kod.kod_rank}}/{{kod.id}}" class="btn btn-outline-danger btn-lg btn-block" style="margin: 1rem;">Kodu Sil</a>
+</main>
