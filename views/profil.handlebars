@@ -1,0 +1,59 @@
+<title>Code Academy - {{member.user.username}}</title> <br><br> <div class="container">
+  <div class="twPc-div bg-dark">
+    <a class="twPc-bg twPc-block"></a>
+    <div>
+      <div class="twPc-button">
+        <a href="https://discordapp.com/users/{{member.user.id}}" class="btn btn-primary btn-sm">Discord</a>  
+      </div>
+      <a href="https://discordapp.com/users/{{member.user.id}}" class="twPc-avatarLink">
+        <img alt="Avatar" src="{{avatarURL}}" class="twPc-avatarImg">
+      </a>
+      <div class="twPc-divUser">
+        <div class="twPc-divName">
+          {{member.user.username}}
+        </div>
+        <span>
+          {{#if perms.yetkili}}
+            <span>Kod Paylaşım Yetkilisi</span>
+          {{else}}
+            {{#if perms.destekçi}}
+              <span>Code Academy Destekçisi</span>
+            {{else}}
+              <span>Üye</span>
+            {{/if}}
+          {{/if}}
+        </span>
+        {{#if stats}}
+          <span> | Paylaşılan: {{stats.paylasilan}} - Silinen: {{stats.silinen}} </span>
+        {{/if}}        
+      </div>
+      <div class="twPc-divStats">
+        <h3>Görebildiği Kodlar</h3>
+        <ul class="twPc-Arrange">
+          <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-secondary" href="/normal">Normal Kodlar</a></span></li>
+          {{#if perms.yetkili}}
+            <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-warning" href="/altin">Altın Kodlar</a></span></li>
+            <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-primary" href="/elmas">Elmas Kodlar</a></span></li>
+            <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-danger" href="/hazir">Hazır Sistemler</a></span></li>
+          {{else}}
+            {{#if perms.destekçi}}
+              <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-warning" href="/altin">Altın Kodlar</a></span></li>
+              <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-primary" href="/elmas">Elmas Kodlar</a></span></li>
+              <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-danger" href="/hazir">Hazır Sistemler</a></span></li>
+            {{else}}
+              {{#if perms.altin}}
+                <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-warning" href="/altin">Altın Kodlar</a></span></li>
+              {{/if}}
+              {{#if perms.elmas}}
+                <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-primary" href="/elmas">Elmas Kodlar</a></span></li>
+              {{/if}}
+              {{#if perms.hazir}}
+                <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-danger" href="/hazir">Hazır Sistemler</a></span></li>
+              {{/if}}
+            {{/if}}
+          {{/if}}  
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
